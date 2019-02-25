@@ -38,3 +38,21 @@ CREATE TABLE IF NOT EXISTS 'Receptionist' (
   PRIMARY KEY ('rFirstName', 'rLastName'),
   FOREIGN KEY ('drID') REFERENCES 'Doctor'('drID') ON DELETE CASCADE
 );
+
+CREATE TABLE IF NOT EXISTS 'Appointment' (
+  'apptID' int NOT NULL AUTO_INCREMENT,
+  'apptTime' text NOT NULL,
+  'drID' int NOT NULL,
+  'patientID' int NOT NULL,
+  PRIMARY KEY ('apptID'),
+  FOREIGN KEY ('drID') REFERENCES 'Doctor'('drID') ON DELETE CASCADE,
+  FOREIGN KEY ('patientID') REFERENCES 'Patients'('patientID') ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS 'WorksFor' (
+  'recID' int NOT NULL,
+  'drID' int NOT NULL,
+  PRIMARY KEY ('recID', 'drID'),
+  FOREIGN KEY ('recID') REFERENCES 'Receptionist'('recID') ON DELETE CASCADE,
+  FOREIGN KEY ('drID') REFERENCES 'Doctor'('drID') ON DELETE CASCADE
+);
