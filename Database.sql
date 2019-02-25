@@ -34,7 +34,6 @@ CREATE TABLE IF NOT EXISTS 'Receptionist' (
   'gender' ENUM('Male','Female'),
   'drID' int NOT NULL,
   CHECK ('gender' > 0 and 'gender' < 3),
-  CHECK ('Classification' > 0 and 'Classification' < 5),
   PRIMARY KEY ('recID'),
   PRIMARY KEY ('rFirstName', 'rLastName'),
   FOREIGN KEY ('drID') REFERENCES 'Doctor'('drID') ON DELETE CASCADE
