@@ -66,7 +66,7 @@ if(isset($_POST['submit'])){
    } else {
 
        // Trim white space from the name and store the name
-       $pType = trim($_POST['patientID']);
+       $patientID = trim($_POST['patientID']);
 
    }
 
@@ -80,7 +80,7 @@ if(isset($_POST['submit'])){
 
 
 
-       mysqli_stmt_bind_param($stmt, "ssssssss", $drID, $drFirstName, $drLastName, $gender, $patientID);
+       mysqli_stmt_bind_param($stmt, "sssss", $drID, $drFirstName, $drLastName, $gender, $patientID);
 
        mysqli_stmt_execute($stmt);
 
@@ -88,7 +88,7 @@ if(isset($_POST['submit'])){
 
        if($affected_rows == 1){
 
-           echo 'Patient Entered';
+           echo 'Doctor Entered';
 
            mysqli_stmt_close($stmt);
 
@@ -123,7 +123,7 @@ if(isset($_POST['submit'])){
 
 <form action="http://localhost/DrAppt/doctorAdded.php" method="post">
 
-<b>Add a New Patient</b>
+<b>Add a New Doctor</b>
 
 <p>Doctor Id:
 <input type="text" name="drID" size="30" value="" />
