@@ -46,6 +46,18 @@ if(isset($_POST['submit'])){
 
    }
 
+   if(empty($_POST['pType'])){
+
+       // Adds name to array
+       $data_missing[] = 'Patient Type';
+
+   } else {
+
+       // Trim white space from the name and store the name
+       $pType = trim($_POST['pType']);
+
+   }
+
    if(empty($_POST['gender'])){
 
        // Adds name to array
@@ -58,15 +70,27 @@ if(isset($_POST['submit'])){
 
    }
 
-   if(empty($_POST['pType'])){
+   if(empty($_POST['age'])){
 
        // Adds name to array
-       $data_missing[] = 'Patient Type';
+       $data_missing[] = 'Age';
 
    } else {
 
        // Trim white space from the name and store the name
-       $pType = trim($_POST['pType']);
+       $age = trim($_POST['age']);
+
+   }
+
+   if(empty($_POST['drID'])){
+
+       // Adds name to array
+       $data_missing[] = 'Doctor ID';
+
+   } else {
+
+       // Trim white space from the name and store the name
+       $gender = trim($_POST['drID']);
 
    }
 
