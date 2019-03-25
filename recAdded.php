@@ -121,7 +121,7 @@ if(isset($_POST['submit'])){
 
 ?>
 
-<form action="http://localhost/DrAppt/recAdded.php" method="post">
+<form action="http://localhost/recAdded.php" method="post">
 
 <b>Add a New Receptionist</b>
 
@@ -141,7 +141,7 @@ if(isset($_POST['submit'])){
 <input type="text" name="gender" size="30" value="" />
 </p>
 
-<p>Patient ID:
+<p>Doctor ID:
 <input type="text" name="drID" size="30" value="" />
 </p>
 
@@ -152,3 +152,4 @@ if(isset($_POST['submit'])){
 </form>
 </body>
 </html>
+
