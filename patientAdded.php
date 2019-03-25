@@ -145,7 +145,7 @@ if(isset($_POST['submit'])){
 
 ?>
 
-<form action="http://localhost/DrAppt/patientAdded.php" method="post">
+<form action="http://localhost/patientAdded.php" method="post">
 
 <b>Add a New Patient</b>
 
@@ -184,3 +184,4 @@ if(isset($_POST['submit'])){
 </form>
 </body>
 </html>
+
